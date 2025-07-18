@@ -10,67 +10,76 @@
     --background-light: #f8f9fa;
     --border-color: #e9ecef;
     --text-color: #343a40;
-    --heading-color: #0d6efd; /* Um azul um pouco mais escuro para títulos */
+    --heading-color: #0d6efd;
     --card-bg: #ffffff;
+
+    /* Novas variáveis para tipografia base */
+    --base-font-size: 16px;
+    --heading-1-size: 2.2rem;
+    --heading-2-size: 1.6rem;
+    --heading-3-size: 1.2rem;
+    --body-font-size: 1rem;
+    --small-text-size: 0.85rem;
 }
 
 body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 15px; /* Reduzido o padding para telas pequenas */
     background-color: var(--background-light);
     color: var(--text-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: var(--base-font-size); /* Define o tamanho da fonte base */
 }
 
 .container {
-    max-width: 800px; /* Um pouco mais estreito para focar o conteúdo */
-    margin: 40px auto;
+    max-width: 800px;
+    margin: 20px auto; /* Margem ajustada para telas menores */
     background: var(--card-bg);
-    padding: 30px 40px; /* Mais padding horizontal */
-    border-radius: 10px; /* Borda mais arredondada */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    padding: 20px; /* Padding ajustado */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 25px; /* Margem ajustada */
+    padding-bottom: 15px; /* Padding ajustado */
     border-bottom: 1px solid var(--border-color);
 }
 
 h1 {
     color: var(--primary-color);
-    font-size: 2.2em;
-    margin-bottom: 10px;
+    font-size: var(--heading-1-size);
+    margin-bottom: 8px; /* Margem ajustada */
 }
 
 h2 {
     color: var(--heading-color);
-    font-size: 1.6em;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    font-size: var(--heading-2-size);
+    margin-top: 25px; /* Margem ajustada */
+    margin-bottom: 15px; /* Margem ajustada */
+    padding-bottom: 8px; /* Padding ajustado */
     border-bottom: 1px solid var(--border-color);
 }
 
 h3 {
     color: var(--primary-color);
-    font-size: 1.2em;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    font-size: var(--heading-3-size);
+    margin-top: 15px; /* Margem ajustada */
+    margin-bottom: 10px; /* Margem ajustada */
 }
 
 p.section-description {
-    font-size: 0.95em;
+    font-size: var(--body-font-size); /* Usa a variável para o corpo do texto */
     color: var(--secondary-color);
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* Margem ajustada */
 }
 
 .small-text {
-    font-size: 0.85em;
+    font-size: var(--small-text-size);
     color: var(--secondary-color);
     margin-top: 5px;
 }
@@ -79,19 +88,20 @@ p.section-description {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 30px;
+    padding: 20px; /* Padding ajustado */
+    margin-bottom: 25px; /* Margem ajustada */
 }
 
 .field-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px; /* Margem ajustada */
 }
 
 .field-group label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 600; /* Um pouco mais encorpado */
+    margin-bottom: 6px; /* Margem ajustada */
+    font-weight: 600;
     color: var(--text-color);
+    font-size: 0.95rem; /* Ajuste para melhor legibilidade no celular */
 }
 
 input[type="text"],
@@ -99,11 +109,11 @@ input[type="number"],
 input[type="date"],
 textarea {
     width: 100%;
-    padding: 10px 12px;
+    padding: 10px; /* Padding ajustado */
     border: 1px solid var(--border-color);
     border-radius: 5px;
     box-sizing: border-box;
-    font-size: 1em;
+    font-size: 1rem; /* Garante que o input seja legível */
     color: var(--text-color);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -119,91 +129,95 @@ textarea:focus {
 
 textarea {
     resize: vertical;
-    min-height: 70px;
+    min-height: 60px; /* Altura mínima ajustada */
 }
 
 .inline-input {
-    width: auto;
+    width: auto; /* Para permitir que o input se ajuste ao conteúdo */
     display: inline-block;
-    margin-left: 10px;
-    flex-grow: 1; /* Para ocupar o espaço restante em flex */
+    margin-left: 8px; /* Margem ajustada */
+    flex-grow: 1;
+    font-size: 0.9rem; /* Levemente menor para não competir */
+    padding: 8px;
 }
 
 .field-group-inline {
     display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
     align-items: center;
     margin-bottom: 15px;
 }
 
 .field-group-inline label {
     margin-bottom: 0;
-    margin-right: 10px;
-    white-space: nowrap; /* Evita que o label quebre */
+    margin-right: 8px; /* Margem ajustada */
+    white-space: normal; /* Permite quebrar linha para labels longos */
 }
 
 /* Estilo para Radio e Checkbox */
 .radio-options, .checkbox-options {
-    margin-top: 10px;
-    display: flex; /* Para organizar em linha ou em colunas flexíveis */
-    flex-wrap: wrap; /* Permite quebrar linha se necessário */
-    gap: 15px; /* Espaçamento entre os itens */
+    margin-top: 8px; /* Margem ajustada */
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna por padrão no celular */
+    gap: 10px; /* Espaçamento ajustado */
 }
 
 .radio-options label, .checkbox-options label {
-    display: flex; /* Para alinhar input e texto */
+    display: flex;
     align-items: center;
     font-weight: normal;
     cursor: pointer;
-    margin-right: 0; /* Removendo margin-right antigo */
+    font-size: 0.95rem; /* Ajuste para melhor legibilidade no celular */
 }
 
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 8px;
-    width: 18px; /* Tamanho maior para checkbox/radio */
-    height: 18px;
-    flex-shrink: 0; /* Não encolher */
+    width: 20px; /* Aumenta o tamanho para facilitar o toque */
+    height: 20px;
+    flex-shrink: 0;
 }
 
 /* Ambiente Cards */
 .ambiente-card {
-    background-color: var(--background-light); /* Cor de fundo mais clara para ambientes */
+    background-color: var(--background-light);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    position: relative; /* Para posicionar o botão de remover */
+    padding: 15px; /* Padding ajustado */
+    margin-bottom: 15px; /* Margem ajustada */
+    position: relative;
 }
 
 .ambiente-card h3 {
     margin-top: 0;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed var(--border-color); /* Linha tracejada */
-    margin-bottom: 15px;
+    padding-bottom: 8px; /* Padding ajustado */
+    border-bottom: 1px dashed var(--border-color);
+    margin-bottom: 12px; /* Margem ajustada */
 }
 
 .ambiente-card .field-group {
-    margin-bottom: 15px;
+    margin-bottom: 12px; /* Margem ajustada */
 }
 
 /* Botões */
 .button-primary, .button-secondary, .remove-ambiente {
-    padding: 12px 25px;
+    padding: 12px 20px; /* Padding ajustado para botões */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1rem; /* Garante que o texto do botão seja legível */
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.2s ease, transform 0.1s ease;
     letter-spacing: 0.5px;
+    width: 100%; /* Botões ocupam a largura total no celular */
+    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
 }
 
 .button-primary {
     background-color: var(--primary-color);
     color: white;
-    width: 100%;
-    margin-top: 30px;
+    margin-top: 25px; /* Margem ajustada */
 }
 
 .button-primary:hover {
@@ -214,8 +228,8 @@ input[type="checkbox"] {
 .button-secondary {
     background-color: var(--accent-color);
     color: white;
-    margin-top: 20px;
-    display: inline-block; /* Para o botão adicionar */
+    margin-top: 15px; /* Margem ajustada */
+    display: block; /* Garante que o botão ocupe a largura total */
 }
 
 .button-secondary:hover {
@@ -226,13 +240,14 @@ input[type="checkbox"] {
 .remove-ambiente {
     background-color: var(--danger-color);
     color: white;
-    font-size: 0.8em; /* Um pouco menor */
-    padding: 6px 12px; /* Menor padding */
-    border-radius: 4px; /* Menos arredondado */
-    position: absolute; /* Posicionar no canto */
-    top: 15px; /* Mais perto do topo */
-    right: 15px;
-    z-index: 10; /* Garante que fique por cima */
+    font-size: 0.75em; /* Levemente menor */
+    padding: 5px 10px; /* Menor padding */
+    border-radius: 4px;
+    position: absolute;
+    top: 10px; /* Mais perto do topo */
+    right: 10px;
+    z-index: 10;
+    width: auto; /* Anula o 100% de largura para ser posicionado */
 }
 
 .remove-ambiente:hover {
@@ -241,10 +256,86 @@ input[type="checkbox"] {
 }
 
 .ambiente-template {
-    display: none; /* Hidden by default for cloning */
+    display: none;
 }
 
-/* Esconder inputs que aparecem com o checkbox */
 .hidden {
     display: none;
+}
+
+/* --- Media Queries para Telas Maiores (Desktop) --- */
+@media (min-width: 768px) {
+    .container {
+        padding: 30px 40px; /* Padding original para desktop */
+        margin: 40px auto; /* Margem original para desktop */
+    }
+
+    h1 {
+        font-size: 2.2em; /* Volta ao tamanho original */
+    }
+
+    h2 {
+        font-size: 1.6em; /* Volta ao tamanho original */
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 1.2em; /* Volta ao tamanho original */
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .field-group label {
+        font-size: 1rem; /* Volta ao tamanho original */
+    }
+
+    .inline-input {
+        margin-left: 10px;
+        font-size: 1em; /* Volta ao tamanho original */
+        padding: 10px;
+    }
+
+    .radio-options, .checkbox-options {
+        flex-direction: row; /* Volta a organizar em linha */
+        gap: 20px; /* Espaçamento original */
+    }
+
+    .radio-options label, .checkbox-options label {
+        font-size: 1rem; /* Volta ao tamanho original */
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        width: 18px; /* Volta ao tamanho original */
+        height: 18px;
+    }
+
+    .ambiente-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .ambiente-card h3 {
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .button-primary {
+        width: auto; /* Volta ao largura auto no desktop */
+        display: inline-block; /* Para centralizar ou alinhar como antes */
+    }
+
+    .button-secondary {
+        width: auto; /* Volta ao largura auto no desktop */
+        display: inline-block;
+    }
+
+    .remove-ambiente {
+        font-size: 0.8em; /* Volta ao tamanho original */
+        padding: 6px 12px;
+        top: 15px; /* Volta ao posicionamento original */
+        right: 15px;
+    }
 }
