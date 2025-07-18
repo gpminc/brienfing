@@ -13,95 +13,94 @@
     --heading-color: #0d6efd;
     --card-bg: #ffffff;
 
-    /* Novas variáveis para tipografia base */
-    --base-font-size: 16px;
-    --heading-1-size: 2.2rem;
-    --heading-2-size: 1.6rem;
-    --heading-3-size: 1.2rem;
-    --body-font-size: 1rem;
-    --small-text-size: 0.85rem;
+    /* Variáveis para tipografia base (ajustadas para mobile primeiro) */
+    --base-font-size: 16px; /* Mantém 16px como boa base para mobile */
+    --heading-1-size: 1.8rem; /* Um pouco menor para mobile */
+    --heading-2-size: 1.4rem; /* Um pouco menor para mobile */
+    --heading-3-size: 1.1rem; /* Um pouco menor para mobile */
+    --body-font-size: 0.95rem; /* Base do texto para mobile */
+    --small-text-size: 0.8rem; /* Texto pequeno para mobile */
 }
 
 body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 15px; /* Reduzido o padding para telas pequenas */
     background-color: var(--background-light);
     color: var(--text-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: var(--base-font-size); /* Define o tamanho da fonte base */
+    font-size: var(--base-font-size);
 }
 
 .container {
     max-width: 800px;
-    margin: 20px auto; /* Margem ajustada para telas menores */
+    margin: 1.5rem auto; /* Mais espaço vertical para o container */
     background: var(--card-bg);
-    padding: 20px; /* Padding ajustado */
+    padding: 1.5rem; /* Mais padding para o conteúdo interno */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 header {
     text-align: center;
-    margin-bottom: 25px; /* Margem ajustada */
-    padding-bottom: 15px; /* Padding ajustado */
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid var(--border-color);
 }
 
 h1 {
     color: var(--primary-color);
     font-size: var(--heading-1-size);
-    margin-bottom: 8px; /* Margem ajustada */
+    margin-bottom: 0.5rem;
 }
 
 h2 {
     color: var(--heading-color);
     font-size: var(--heading-2-size);
-    margin-top: 25px; /* Margem ajustada */
-    margin-bottom: 15px; /* Margem ajustada */
-    padding-bottom: 8px; /* Padding ajustado */
+    margin-top: 2rem; /* Mais espaço antes dos títulos de seção */
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-color);
 }
 
 h3 {
     color: var(--primary-color);
     font-size: var(--heading-3-size);
-    margin-top: 15px; /* Margem ajustada */
-    margin-bottom: 10px; /* Margem ajustada */
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
 }
 
 p.section-description {
-    font-size: var(--body-font-size); /* Usa a variável para o corpo do texto */
+    font-size: var(--body-font-size);
     color: var(--secondary-color);
-    margin-bottom: 20px; /* Margem ajustada */
+    margin-bottom: 1.5rem;
 }
 
 .small-text {
     font-size: var(--small-text-size);
     color: var(--secondary-color);
-    margin-top: 5px;
+    margin-top: 0.3rem; /* Espaçamento ajustado */
 }
 
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 20px; /* Padding ajustado */
-    margin-bottom: 25px; /* Margem ajustada */
+    padding: 1.2rem; /* Padding para cards */
+    margin-bottom: 1.5rem; /* Margem entre cards */
 }
 
 .field-group {
-    margin-bottom: 18px; /* Margem ajustada */
+    margin-bottom: 1rem; /* Margem padrão para grupos de campos */
 }
 
 .field-group label {
     display: block;
-    margin-bottom: 6px; /* Margem ajustada */
+    margin-bottom: 0.4rem; /* Mais espaço para o label */
     font-weight: 600;
     color: var(--text-color);
-    font-size: 0.95rem; /* Ajuste para melhor legibilidade no celular */
+    font-size: var(--body-font-size); /* Tamanho padrão para labels */
 }
 
 input[type="text"],
@@ -109,11 +108,11 @@ input[type="number"],
 input[type="date"],
 textarea {
     width: 100%;
-    padding: 10px; /* Padding ajustado */
+    padding: 0.8rem; /* Aumentei o padding dos inputs */
     border: 1px solid var(--border-color);
     border-radius: 5px;
     box-sizing: border-box;
-    font-size: 1rem; /* Garante que o input seja legível */
+    font-size: 1rem; /* Garante que o texto digitado seja grande e legível */
     color: var(--text-color);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -129,37 +128,38 @@ textarea:focus {
 
 textarea {
     resize: vertical;
-    min-height: 60px; /* Altura mínima ajustada */
+    min-height: 5rem; /* Altura mínima em rem para escalabilidade */
 }
 
 .inline-input {
-    width: auto; /* Para permitir que o input se ajuste ao conteúdo */
+    width: auto;
     display: inline-block;
-    margin-left: 8px; /* Margem ajustada */
+    margin-left: 0.6rem; /* Margem ajustada */
     flex-grow: 1;
     font-size: 0.9rem; /* Levemente menor para não competir */
-    padding: 8px;
+    padding: 0.6rem; /* Padding ajustado */
 }
 
 .field-group-inline {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .field-group-inline label {
     margin-bottom: 0;
-    margin-right: 8px; /* Margem ajustada */
-    white-space: normal; /* Permite quebrar linha para labels longos */
+    margin-right: 0.6rem;
+    white-space: normal;
+    font-size: var(--body-font-size); /* Consistente com labels */
 }
 
 /* Estilo para Radio e Checkbox */
 .radio-options, .checkbox-options {
-    margin-top: 8px; /* Margem ajustada */
+    margin-top: 0.6rem;
     display: flex;
-    flex-direction: column; /* Coloca os itens em coluna por padrão no celular */
-    gap: 10px; /* Espaçamento ajustado */
+    flex-direction: column; /* Padrão em coluna para mobile */
+    gap: 0.8rem; /* Espaçamento entre as opções */
 }
 
 .radio-options label, .checkbox-options label {
@@ -167,14 +167,15 @@ textarea {
     align-items: center;
     font-weight: normal;
     cursor: pointer;
-    font-size: 0.95rem; /* Ajuste para melhor legibilidade no celular */
+    font-size: var(--body-font-size); /* Tamanho padrão para opções */
+    min-height: 2rem; /* Garante área de toque suficiente */
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-    margin-right: 8px;
-    width: 20px; /* Aumenta o tamanho para facilitar o toque */
-    height: 20px;
+    margin-right: 0.5rem;
+    width: 1.25rem; /* Aumentei para 20px */
+    height: 1.25rem; /* Aumentei para 20px */
     flex-shrink: 0;
 }
 
@@ -183,41 +184,41 @@ input[type="checkbox"] {
     background-color: var(--background-light);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 15px; /* Padding ajustado */
-    margin-bottom: 15px; /* Margem ajustada */
+    padding: 1.2rem;
+    margin-bottom: 1rem; /* Mais apertado entre ambientes */
     position: relative;
 }
 
 .ambiente-card h3 {
     margin-top: 0;
-    padding-bottom: 8px; /* Padding ajustado */
+    padding-bottom: 0.5rem;
     border-bottom: 1px dashed var(--border-color);
-    margin-bottom: 12px; /* Margem ajustada */
+    margin-bottom: 0.8rem;
 }
 
 .ambiente-card .field-group {
-    margin-bottom: 12px; /* Margem ajustada */
+    margin-bottom: 0.8rem;
 }
 
 /* Botões */
 .button-primary, .button-secondary, .remove-ambiente {
-    padding: 12px 20px; /* Padding ajustado para botões */
+    padding: 0.8rem 1.2rem; /* Padding em rem */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem; /* Garante que o texto do botão seja legível */
+    font-size: 1rem; /* Tamanho do texto do botão */
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.2s ease, transform 0.1s ease;
     letter-spacing: 0.5px;
-    width: 100%; /* Botões ocupam a largura total no celular */
-    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+    width: 100%; /* Largura total no mobile */
+    box-sizing: border-box;
 }
 
 .button-primary {
     background-color: var(--primary-color);
     color: white;
-    margin-top: 25px; /* Margem ajustada */
+    margin-top: 2rem; /* Mais espaço antes do botão principal */
 }
 
 .button-primary:hover {
@@ -228,8 +229,8 @@ input[type="checkbox"] {
 .button-secondary {
     background-color: var(--accent-color);
     color: white;
-    margin-top: 15px; /* Margem ajustada */
-    display: block; /* Garante que o botão ocupe a largura total */
+    margin-top: 1rem; /* Margem ajustada */
+    display: block; /* Ocupa largura total */
 }
 
 .button-secondary:hover {
@@ -240,14 +241,14 @@ input[type="checkbox"] {
 .remove-ambiente {
     background-color: var(--danger-color);
     color: white;
-    font-size: 0.75em; /* Levemente menor */
-    padding: 5px 10px; /* Menor padding */
+    font-size: 0.7rem; /* Tamanho um pouco menor para o texto do remover */
+    padding: 0.4rem 0.8rem; /* Padding ajustado */
     border-radius: 4px;
     position: absolute;
-    top: 10px; /* Mais perto do topo */
-    right: 10px;
+    top: 0.8rem; /* Perto do topo */
+    right: 0.8rem; /* Perto da direita */
     z-index: 10;
-    width: auto; /* Anula o 100% de largura para ser posicionado */
+    width: auto;
 }
 
 .remove-ambiente:hover {
@@ -263,11 +264,16 @@ input[type="checkbox"] {
     display: none;
 }
 
-/* --- Media Queries para Telas Maiores (Desktop) --- */
+/* --- Media Queries para Telas Maiores (Desktop/Tablet) --- */
 @media (min-width: 768px) {
+    body {
+        padding: 20px; /* Padding original para desktop */
+        font-size: 16px; /* Volta ao tamanho base de desktop */
+    }
+
     .container {
-        padding: 30px 40px; /* Padding original para desktop */
-        margin: 40px auto; /* Margem original para desktop */
+        padding: 30px 40px;
+        margin: 40px auto;
     }
 
     h1 {
@@ -287,23 +293,49 @@ input[type="checkbox"] {
         margin-bottom: 15px;
     }
 
+    p.section-description {
+        font-size: 1em; /* Volta ao tamanho original */
+    }
+
+    .small-text {
+        font-size: 0.85em; /* Volta ao tamanho original */
+    }
+
     .field-group label {
-        font-size: 1rem; /* Volta ao tamanho original */
+        font-size: 1em; /* Volta ao tamanho original */
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
+        padding: 10px 12px; /* Volta ao padding original */
+        font-size: 1em; /* Volta ao tamanho original */
+    }
+
+    textarea {
+        min-height: 70px; /* Volta ao tamanho original */
     }
 
     .inline-input {
         margin-left: 10px;
-        font-size: 1em; /* Volta ao tamanho original */
+        font-size: 1em;
         padding: 10px;
+    }
+
+    .field-group-inline label {
+        margin-right: 10px;
+        white-space: nowrap; /* Volta a não quebrar linha */
     }
 
     .radio-options, .checkbox-options {
         flex-direction: row; /* Volta a organizar em linha */
-        gap: 20px; /* Espaçamento original */
+        gap: 20px;
     }
 
     .radio-options label, .checkbox-options label {
-        font-size: 1rem; /* Volta ao tamanho original */
+        font-size: 1em; /* Volta ao tamanho original */
+        min-height: unset; /* Remove min-height */
     }
 
     input[type="radio"],
@@ -324,7 +356,7 @@ input[type="checkbox"] {
 
     .button-primary {
         width: auto; /* Volta ao largura auto no desktop */
-        display: inline-block; /* Para centralizar ou alinhar como antes */
+        display: inline-block;
     }
 
     .button-secondary {
@@ -333,9 +365,9 @@ input[type="checkbox"] {
     }
 
     .remove-ambiente {
-        font-size: 0.8em; /* Volta ao tamanho original */
+        font-size: 0.8em;
         padding: 6px 12px;
-        top: 15px; /* Volta ao posicionamento original */
+        top: 15px;
         right: 15px;
     }
 }
