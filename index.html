@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing de Automação INOVA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Briefing de Projeto de Automação INOVA</h1>
+            <p>Para um projeto de automação personalizado, por favor, forneça os detalhes abaixo.</p>
+        </header>
+
+        <form id="briefingForm">
+            <section class="card">
+                <h2>1. Dados do Cliente e Imóvel</h2>
+                <div class="field-group">
+                    <label for="nomeCliente">Cliente/Responsável:</label>
+                    <input type="text" id="nomeCliente" name="nomeCliente" required>
+                </div>
+
+                <div class="field-group">
+                    <label>Tipo de Imóvel:</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="tipoImovel" value="Apartamento" required> Apartamento</label>
+                        <label><input type="radio" name="tipoImovel" value="Casa"> Casa</label>
+                        <label><input type="radio" name="tipoImovel" value="Outro"> Outro</label>
+                        <input type="text" name="tipoImovelOutro" class="inline-input hidden" placeholder="Especificar">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="localizacaoImovel">Localização (Cidade, Bairro):</label>
+                    <input type="text" id="localizacaoImovel" name="localizacaoImovel" value="Itabuna, Bahia - Bairro:" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="tamanhoImovel">Área (m²):</label>
+                    <input type="number" id="tamanhoImovel" name="tamanhoImovel" min="0">
+                </div>
+
+                <div class="field-group">
+                    <label for="numPavimentos">Pavimentos:</label>
+                    <input type="number" id="numPavimentos" name="numPavimentos" min="1">
+                </div>
+
+                <div class="field-group">
+                    <label>Situação do Imóvel:</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="situacaoImovel" value="Novo" required> Novo (em construção/planta)</label>
+                        <label><input type="radio" name="situacaoImovel" value="Reforma"> Reforma</label>
+                        <label><input type="radio" name="situacaoImovel" value="Ja construido"> Já construído</label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="dataInicioInstalacao">Previsão de Início (Instalação):</label>
+                    <input type="date" id="dataInicioInstalacao" name="dataInicioInstalacao">
+                </div>
+
+                <div class="field-group">
+                    <label for="orcamentoEstimado">Orçamento Estimado (R$):</label>
+                    <input type="text" id="orcamentoEstimado" name="orcamentoEstimado" placeholder="Ex: 5.000 - 10.000">
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>2. Ambientes e Automação Desejada</h2>
+                <p class="section-description">Clique em "Adicionar Ambiente" para configurar cada cômodo/área.</p>
+
+                <div id="ambientesContainer">
+                    <div class="ambiente-card ambiente-template" data-ambiente-type="generico">
+                        <button type="button" class="remove-ambiente">Remover</button>
+                        <div class="field-group">
+                            <label for="ambienteNome_1">Nome do Ambiente:</label>
+                            <input type="text" id="ambienteNome_1" name="ambiente_1_nome" placeholder="Ex: Sala de Estar, Quarto Suíte, Cozinha" required>
+                        </div>
+                        <h3>Funcionalidades Desejadas:</h3>
+                        <div class="checkbox-options">
+                            <label><input type="checkbox" name="ambiente_1_iluminacao"> Iluminação <input type="number" class="inline-input hidden" name="ambiente_1_iluminacao_qtd" placeholder="Qtd. pontos"></label>
+                            <label><input type="checkbox" name="ambiente_1_tomadas"> Tomadas Inteligentes <input type="number" class="inline-input hidden" name="ambiente_1_tomadas_qtd" placeholder="Qtd."></label>
+                            <label><input type="checkbox" name="ambiente_1_arCondicionado"> Ar Condicionado</label>
+                            <label><input type="checkbox" name="ambiente_1_persianas"> Persianas/Cortinas <input type="number" class="inline-input hidden" name="ambiente_1_persianas_qtd" placeholder="Qtd."></label>
+                            <label><input type="checkbox" name="ambiente_1_somAmbiente"> Som Ambiente</label>
+                            <label><input type="checkbox" name="ambiente_1_cameras"> Câmeras de Segurança <input type="text" class="inline-input hidden" name="ambiente_1_cameras_tipo" placeholder="Interna/Externa"></label>
+                            <label><input type="checkbox" name="ambiente_1_painelControle"> Painel de Controle Físico</label>
+                            <label><input type="checkbox" name="ambiente_1_sensorGasFumaca"> Sensor Gás/Fumaça</label>
+                            <label><input type="checkbox" name="ambiente_1_exaustorInteligente"> Exaustor Inteligente</label>
+                            <label><input type="checkbox" name="ambiente_1_irrigacao"> Irrigação Inteligente</label>
+                            <label><input type="checkbox" name="ambiente_1_portaoGaragem"> Portão de Garagem</label>
+                            <label><input type="checkbox" name="ambiente_1_sensorPresenca"> Sensor de Presença</label>
+                            <label><input type="checkbox" name="ambiente_1_controleAcesso"> Controle de Acesso</label>
+                            <label><input type="checkbox" name="ambiente_1_sensorAbertura"> Sensor Abertura Portas/Janelas</label>
+                            <label><input type="checkbox" name="ambiente_1_sensorVazamento"> Sensor Vazamento Água</label>
+                        </div>
+                        <div class="field-group">
+                            <label for="ambienteDetalhes_1">Detalhes Adicionais do Ambiente:</label>
+                            <textarea id="ambienteDetalhes_1" name="ambiente_1_detalhes" rows="2" placeholder="Ex: Integração com TV existente, necessidade de dimerização específica, etc."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="addAmbiente" class="button-secondary">Adicionar Ambiente</button>
+
+                <div class="ambiente-card">
+                    <h3>Necessidades Gerais (Gerais para todo o imóvel):</h3>
+                    <div class="checkbox-options">
+                        <label><input type="checkbox" name="geral_estacaoMeteorologica"> Estação Meteorológica</label>
+                        <label><input type="checkbox" name="geral_integracaoAssistentes"> Integração com Assistentes Virtuais (Alexa, Google Assistant)</label>
+                        <label><input type="checkbox" name="geral_dispositivoExistente"> Dispositivo/Sistema de automação existente <input type="text" class="inline-input hidden" name="geral_dispositivoExistente_qual" placeholder="Qual"></label>
+                    </div>
+                    <div class="field-group">
+                        <label for="geralDetalhes">Outras Observações Gerais:</label>
+                        <textarea id="geralDetalhes" name="geral_detalhes" rows="2" placeholder="Preocupações com privacidade, segurança, facilidade de uso, etc."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>3. Infraestrutura e Conectividade</h2>
+                <div class="field-group">
+                    <label for="conexaoInternet">Internet (Provedor, Velocidade):</label>
+                    <input type="text" id="conexaoInternet" name="conexaoInternet">
+                </div>
+
+                <div class="field-group">
+                    <label>Roteador Wi-Fi Atual:</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="roteadorWifi" value="Sim"> Sim</label>
+                        <label><input type="radio" name="roteadorWifi" value="Não"> Não</label>
+                        <label><input type="radio" name="roteadorWifi" value="Não Sei"> Não Sei</label>
+                        <input type="text" name="roteadorWifiModelo" class="inline-input hidden" placeholder="Modelo/Marca">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Rede Wi-Fi Mesh?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="wifiMesh" value="Sim"> Sim</label>
+                        <label><input type="radio" name="wifiMesh" value="Não"> Não</label>
+                        <label><input type="radio" name="wifiMesh" value="Não Sei"> Não Sei</label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Pontos de rede RJ45 embutidos?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="pontosRedeRJ45" value="Sim"> Sim</label>
+                        <label><input type="radio" name="pontosRedeRJ45" value="Não"> Não</label>
+                        <label><input type="radio" name="pontosRedeRJ45" value="Parcialmente"> Parcialmente</label>
+                        <input type="text" name="pontosRedeRJ45Detalhes" class="inline-input hidden" placeholder="Detalhes">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Possibilidade de passar novos cabos (Ethernet) na obra/reforma?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="passarNovosCabos" value="Sim"> Sim</label>
+                        <label><input type="radio" name="passarNovosCabos" value="Não"> Não</label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Pontos de energia suficientes?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="pontosEnergiaSuficientes" value="Sim"> Sim</label>
+                        <label><input type="radio" name="pontosEnergiaSuficientes" value="Não"> Não</label>
+                        <label><input type="radio" name="pontosEnergiaSuficientes" value="Não Sei"> Não Sei</label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Necessidade de novos pontos elétricos?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="necessidadeNovosPontosEletricos" value="Sim"> Sim</label>
+                        <label><input type="radio" name="necessidadeNovosPontosEletricos" value="Não"> Não</label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Espaço disponível no QDC (Quadro de Distribuição Elétrica) para módulos de automação?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="espacoQDC" value="Sim"> Sim</label>
+                        <label><input type="radio" name="espacoQDC" value="Não"> Não</label>
+                        <label><input type="radio" name="espacoQDC" value="Não Sei"> Não Sei</label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Tecnologia Preferida (se houver):</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="preferenciaTecnologia" value="Wi-Fi"> Wi-Fi</label>
+                        <label><input type="radio" name="preferenciaTecnologia" value="Zigbee"> Zigbee</label>
+                        <label><input type="radio" name="preferenciaTecnologia" value="Ambos"> Ambos (Híbrido)</label>
+                        <label><input type="radio" name="preferenciaTecnologia" value="Sem Preferencia"> Sem Preferência</label>
+                    </div>
+                    <p class="small-text">Explicar as vantagens de cada para o cliente.</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>4. Nível de Automação e Rotinas Específicas</h2>
+                <div class="field-group">
+                    <label>Grau de Automação Desejado:</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="grauAutomacao" value="Básico"> Básico (controle individual)</label>
+                        <label><input type="radio" name="grauAutomacao" value="Intermediário"> Intermediário (cenas simples, agendamentos)</label>
+                        <label><input type="radio" name="grauAutomacao" value="Avançado"> Avançado (automação complexa, integração)</label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="cenariosRotinas">Cenários/Rotinas Específicas (ex: "Ao sair, desligar tudo", "Ao acordar, abrir cortina e acender luz fraca"):</label>
+                    <textarea id="cenariosRotinas" name="cenariosRotinas" rows="4"></textarea>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>5. Observações Adicionais</h2>
+                <div class="field-group">
+                    <label for="detalhesAdicionaisImovel">Detalhes do imóvel que podem impactar o projeto (ex: paredes grossas, área externa ampla)?</label>
+                    <textarea id="detalhesAdicionaisImovel" name="detalhesAdicionaisImovel" rows="3"></textarea>
+                </div>
+            </section>
+
+            <button type="submit" class="button-primary">Gerar Briefing em PDF</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
